@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML QUIZ</title>
+    <meta name="theme-color" content="#2d4fcb" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div
+        class="text-white d-flex align-items-center justify-content-center"
+        style="height: 90vh"
+      >
+        <div
+          class="spinner-border"
+          style="width: 8rem; height: 8rem"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="main">
+      <div id="quizDiv" class="container p-5 my-5 section-1">
+        <div class="row">
+          <div class="col-6">
+            <h3 id="questionCount"></h3>
+          </div>
+          <div class="col-6 text-end">
+            <h3 id="timer">Time left: ***</h3>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <div id="progressBar" class="progress" style="height: 10px"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <h2
+              id="question"
+              class="badge-primary rounded text-center p-4"
+            ></h2>
+          </div>
+        </div>
+        <div id="options" class="row"></div>
+      </div>
+    </div>
+
+    <div id="result"></div>
+    <!-- SCRIPTS AREA-->
+
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- CUSTOM SCRIPT -->
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

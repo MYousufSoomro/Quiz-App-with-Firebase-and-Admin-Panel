@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question Add Page | QuizApp</title>
+    <meta name="theme-color" content="#2d4fcb" />
+    <link rel="icon" type="image/png" href="../assets/images/logo.png" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/dashboard-style.css" />
+
+    <script type="module" src="../assets/js/add.js" defer></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <a class="navbar-brand mt-2 mt-lg-0" href="./dashboard.html">
+          <img
+            src="../assets/images/logo.png"
+            height="40"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+          Quiz App
+        </a>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="./dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./add.html">Add</a>
+            </li>
+          </ul>
+          <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+          <!-- Avatar -->
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle d-flex align-items-center hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuAvatar"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                class="rounded-circle"
+                height="25"
+                alt="Black and White Portrait of a Man"
+                loading="lazy"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuAvatar"
+            >
+              <li>
+                <a id="signOutBTN" class="dropdown-item" href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Right elements -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <div class="container mt-5">
+      <h1>Add Question</h1>
+      <hr />
+      <div class="col-md-6">
+        <div id="errorDiv" class="bg-danger text-white rounded">
+          <p class="p-2">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span id="errorMsg">Error message here...</span>
+          </p>
+        </div>
+
+        <div id="optionTypeQuestion">
+          <!-- Question input -->
+          <div class="form-outline mb-4 input-group-lg">
+            <input type="text" id="optionQuestion" class="form-control" />
+            <label class="form-label" for="optionQuestion">Question</label>
+          </div>
+
+          <!-- Option inputs -->
+          <div class="input-group mb-3">
+            <div class="input-group-text">
+              <input
+                id="option1Checkbox"
+                class="form-check-input mt-0"
+                name="check"
+                type="checkbox"
+                onclick="onlyOne(this)"
+              />
+            </div>
+            <input
+              id="option1"
+              type="text"
+              class="form-control"
+              placeholder="write option 1 here..."
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-text">
+              <input
+                id="option2Checkbox"
+                class="form-check-input mt-0"
+                name="check"
+                type="checkbox"
+                onclick="onlyOne(this)"
+              />
+            </div>
+            <input
+              id="option2"
+              type="text"
+              class="form-control"
+              placeholder="write option 2 here..."
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-text">
+              <input
+                id="option3Checkbox"
+                class="form-check-input mt-0"
+                name="check"
+                type="checkbox"
+                onclick="onlyOne(this)"
+              />
+            </div>
+            <input
+              id="option3"
+              type="text"
+              class="form-control"
+              placeholder="write option 3 here..."
+            />
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-text">
+              <input
+                id="option4Checkbox"
+                class="form-check-input mt-0"
+                type="checkbox"
+                name="check"
+                onclick="onlyOne(this)"
+              />
+            </div>
+            <input
+              id="option4"
+              type="text"
+              class="form-control"
+              placeholder="write option 4 here..."
+            />
+          </div>
+          <div id="textExample1" class="form-text my-3">
+            Want to add Question with
+            <span class="badge rounded-pill badge-success">True</span> /
+            <span class="badge rounded-pill badge-danger">False</span> Select?
+            <span id="booleanSwitch" class="text-primary pointer"
+              >Click here</span
+            >
+          </div>
+
+          <!-- Submit button -->
+          <button
+            type="submit"
+            id="addOptionQuestion"
+            class="btn btn-primary btn-block"
+          >
+            Add
+          </button>
+        </div>
+
+        <div id="booleanTypeQuestion">
+          <!-- Question input -->
+          <div class="form-outline mb-4 input-group-lg">
+            <input type="text" id="booleanQuestion" class="form-control" />
+            <label class="form-label" for="question">Question</label>
+          </div>
+
+          <div id="textExample1" class="form-text mb-2">
+            Enable correct option below...
+          </div>
+
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="trueOptionCheck"
+              name="check"
+              onclick="onlyOne(this)"
+            />
+            <label class="form-check-label text-success" for="trueOptionCheck"
+              >True</label
+            >
+          </div>
+
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="falseOptionCheck"
+              name="check"
+              onclick="onlyOne(this)"
+            />
+            <label class="form-check-label text-danger" for="falseOptionCheck"
+              >False</label
+            >
+          </div>
+
+          <div id="textExample1" class="form-text my-3">
+            Want to add Question with option select?
+            <span id="optionSwitch" class="text-primary pointer"
+              >Click here</span
+            >
+          </div>
+
+          <!-- Submit button -->
+          <button
+            type="submit"
+            id="addBooleanQuestion"
+            class="btn btn-primary btn-block"
+          >
+            Add
+          </button>
+        </div>
+
+        <!-- Loading button -->
+        <button
+          id="loadingBTN"
+          class="btn btn-primary btn-block"
+          type="button"
+          disabled
+        >
+          <span
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          Loading...
+        </button>
+
+        <!-- Loading button -->
+        <button
+          id="redirectingBTN"
+          class="btn btn-success btn-block text-white"
+          type="button"
+          disabled
+        >
+          <span
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          Redirecting...
+        </button>
+      </div>
+    </div>
+
+    <!-- MDB -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
+    ></script>
+  </body>
+</html>

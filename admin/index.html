@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADMIN Signin Page | QuizApp</title>
+    <meta name="theme-color" content="#2d4fcb" />
+    <link rel="icon" type="image/png" href="./assets/images/logo.png" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script type="module" src="assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img
+            src="./assets/images/logo.png"
+            height="40"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+          Quiz App
+        </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <div class="container mt-5">
+      <h1>Admin Portal</h1>
+      <hr />
+
+      <div class="col-md-4">
+        <div id="errorDiv" class="bg-danger text-white rounded">
+          <p class="p-2">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span id="errorMsg">Error message here...</span>
+          </p>
+        </div>
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input
+            type="email"
+            id="adminEmail"
+            class="form-control"
+            value="admin@gmail.com"
+          />
+          <label class="form-label" for="adminEmail">Email address</label>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input
+            type="password"
+            id="adminPassword"
+            class="form-control"
+            value="123456"
+          />
+          <label class="form-label" for="adminPassword">Password</label>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" id="signinBTN" class="btn btn-primary btn-block">
+          Sign in
+        </button>
+
+        <!-- Loading button -->
+        <button
+          id="loadingBTN"
+          class="btn btn-primary btn-block"
+          type="button"
+          disabled
+        >
+          <span
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          Loading...
+        </button>
+
+        <!-- Loading button -->
+        <button
+          id="redirectingBTN"
+          class="btn btn-success btn-block text-white"
+          type="button"
+          disabled
+        >
+          <span
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          Redirecting...
+        </button>
+      </div>
+    </div>
+
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
+    ></script>
+  </body>
+</html>
